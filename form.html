@@ -1,0 +1,159 @@
+<!--
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+        <form action="demo_form.asp" method="post">
+             <table>
+                 <tr>
+                     <td>
+                         <span>First Name:</span>
+                     </td>
+                     <td>
+                         <input type="text" name="first" placeholder="First Name" >  
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <span>Last Name:</span>
+                     </td>
+                     <td>
+                         <input type="text" name="last" placeholder="Last Name" >  
+                     </td>
+                 </tr>
+                 <tr id="otherAddress">
+                     <td>
+                        <span>Email Address:</span>
+                     </td>
+                     <td >
+                         <input type="email" name="email" placeholder="Your email address" >
+                     </td>
+                     <td>
+                         <input type="button" name="email1" value="Add Another" onclick="creatNewField()">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                        <span>Phone Number:</span>
+                     </td>
+                     <td>
+                         <input type="text" name="number" placeholder="Your phone number" >
+                     </td>
+                     <td>
+                         <input id="otherNum" name="number1" type="button" value="Add Another">
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                        <span>Address:</span>
+                     </td>
+                     <td>
+                         <textarea name="area" id="" cols="30" rows="10"></textarea>
+                     </td>
+
+                 </tr>
+                 <tr>
+                     <td>
+                        <span>Gender:</span>
+                     </td>
+                     <td>
+                         <input type="radio" name="sex" value="male">Male
+                         <input type="radio" name="sex" value="female">female
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                        <span>Education:</span>
+                     </td>
+                     <td>
+                         <input type="checkbox" value="SSC" name="SSC">SSC
+                         <input type="checkbox" value="HSC" name="HSC">HSC
+                         <input type="checkbox" value="Hons" name="Hons">Hons
+                     </td>
+                 </tr>
+                 <tr>
+                     <td></td>
+                     <td>
+                         <input type="checkbox" value="Other">Others
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <input type="submit" value="Submit">
+                     </td>
+                 </tr>
+             </table>
+        </form>
+        <script>
+            function creatNewField(){
+                var trNode = document.createElement("tr");
+                var inputTag = document.createElement("INPUT");
+                inputTag.setAttribute("type", "email");
+                inputTag.setAttribute("placeholder", "give ur email");
+                inputTag.setAttribute("name", "email1");
+                
+                trNode.appendChild(inputTag)
+                
+                var targetElement = document.getElementById("otherAddress");
+                targetElement.appendChild(trNode) ;  
+            }
+        </script>
+    </body>
+</html>
+-->
+<!DOCTYPE html>  
+<html lang="en">
+    <head>  
+        <meta charset="utf-8">  
+        <title>JS Form</title>  
+        <link rel='stylesheet' href='style.css' type='text/css' />  
+        <script src="myScript.js"></script>  
+    </head>  
+    <body>  
+        <h1>Registration Form</h1>   
+        <form name='registration' method="post">  
+            <ul>  
+                <li><label for="userName">First Name:</label></li>  
+                <li><input type="text" name="userName" size="12" required/></li>  
+                <li><label for="lastName">Last Name:</label></li>  
+                <li><input type="text" name="lastName" size="12" required /></li>  
+                <li><label for="phn">Phone No:</label></li>  
+                <li id="addAnotherphn"><input type="text" name="phn" size="20" required /></li> 
+                <li ><input type="button" value="Add More" 
+                onclick="createField('text', 'give ur phone', 'p'+phnCount++, 'addAnotherphn')"/>
+                </li>
+<!--                <li id="addAnotherphn"></li> -->
+                <li><label for="email">Email:</label></li>  
+                <li id="otherAddress"><input type="email" name="email" size="50" required /></li>   
+                <li><input type="button" value="Add Another" 
+                onclick="createField('email', 'give ur email', 'e'+emailCount++, 'otherAddress')" /></li>
+<!--                <li id="otherAddress"></li>   -->
+                <li><label for="address">Address:</label></li>  
+                <li><textarea name="abt" id="address"></textarea></li>
+                <li><label for="zip">ZIP Code:</label></li>  
+                <li><input type="text" name="zip" /></li>   
+                <li><label for="country">Country:</label></li>  
+                <li>
+                    <select name="country">  
+                        <option selected="" value="Default">Please select a country</option>  
+                        <option value="AUS">Australia</option>  
+                        <option value="CAN">Canada</option>  
+                        <option value="IND">India</option>  
+                        <option value="RUS">Russia</option>  
+                        <option value="USA">USA</option>
+                        <option value="BAN">Bangladesh</option>  
+                    </select></li>  
+                <li><label id="gender">Sex:</label></li>  
+                <li><input type="radio" name="sex" value="male" checked><span>Male</span></li>  
+                <li><input type="radio" name="sex" value="female"><span>Female</span></li>  
+                <li><label>Language:</label></li>  
+                <li><input type="checkbox" name="en" value="en" /><span>English</span></li>  
+                <li><input type="checkbox" name="none" value="none" /><span>Other</span></li>   
+                <li><input type="submit" name="submit" value="Submit" /></li>  
+            </ul>  
+        </form>  
+    </body>  
+</html> 

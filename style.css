@@ -1,0 +1,37 @@
+
+  
+form li {  
+    list-style: none;  
+    margin-bottom: 5px;  
+}  
+  
+form ul li label{  
+/*
+    float: left;  
+    clear: left;  
+*/
+    width: 100px;  
+    text-align: right;  
+    margin-right: 10px;    
+    font-size:14px;  
+}  
+  
+form ul li input, select, span {  
+/*    float: left;  */
+    margin-bottom: 10px;  
+}  
+  
+form textarea {  
+/*    float: left;  */
+    width: 350px;  
+    height: 150px;
+    resize: none;
+    margin-bottom: 20px;
+
+}  
+  
+[type="submit"] {  
+/*    clear: left;  */
+    font-size:18px  
+}  
+  
